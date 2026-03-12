@@ -1,0 +1,79 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Order{
+private:
+    static int totalOrders;
+ const int orderId;
+ string customerName; 
+ int* items; 
+ int itemCount; 
+ double totalPrice;
+public:
+    Order() : orderId(++totalOrders){
+        customerName = "Аноним";                 /// по умолчанию;
+        itemCount = 0;
+        items = nullptr;
+        totalOrders = 0;
+        cout << "Создан пустой заказ #" << orderId << "\n";
+    }
+    Order(string name, int* massiv, int count, double double price) : orderId(++totalOrders){
+        customerName = name;
+        itemCount = count;
+        totalPrice = price;
+        
+        
+        if(count > 0){
+            items = new int[count];
+            for(int i = 0; i < count; count++){
+                items[i] == massv[i];                         //с парамтерами
+            }
+        }
+        else{
+            items = nullptr;
+        }
+        cout << "Создан заказ # " << orderId << "для клиента" << name << "\n";
+        
+    }
+    Order(const Order& other) : orderId(++totalOrders){
+        customerName = other.customerName;
+        itemCount = other.itemCount;
+        totalPrice = other.totalPrice;
+        
+        
+        if(itemCount>0){                                 //копирование
+            items = new int[itemCount];
+            for(int i = 0; i < itemCount; i++){
+                items[i] == other.items[i];
+            }
+        }
+        else{
+            items = nullptr;
+        }
+        cout << "Создана копия заказа #" << other.orderId << "- >" << orderId << "\n";
+    }
+    void displayOrder(){
+        cout << "заказ # " << orderId << "\n";
+        cout << "клиент: " << customerName <<  "\n";
+        cout << "количество " << itemCount << "\n";
+        cout << "стоимость " << totalPrice << "\n";
+    } 
+    
+    void addItem(int itemId, double price){
+        int* newitem = new int[itemCount];
+        for(int i = 0; i < itemCount; i++){
+            newitem[i] == items[i];
+        }
+        newitem[itemCount] == itemId;
+        delete items[];
+        cout << "Товар " << itemId << "добавлеен в заказ" << orderId << endl;
+        
+    }
+    
+    
+        
+    
+
+
+    
+
+}
