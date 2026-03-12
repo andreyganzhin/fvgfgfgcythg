@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Student{
+private:
+    int id;
+    string name;
+    double grade;
+
+public:
+    Student(){
+    name = "Неизвестно";
+    id = 0;
+    grade = 0.0;
+    cout << "Создан студент " << name << "ID" << id << "балл: "<< grade << "\n";
+}
+
+void displayInfo(){
+    cout << "Имя " << name << "ID" << id << "Средний балл: " << grade << "\n";
+}
+};
+int main() {
+    Student studentone;
+    Student studenttwo;
+    
+    
+    
+    displayInfo.studentone();
+    displayInfo.studenttwo();
+    return 0;
+}
